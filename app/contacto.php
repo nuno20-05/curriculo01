@@ -1,6 +1,6 @@
 <?php
 $name = "Nuno Silva";
-$contact_email = "nuno.silva@example.com";
+$contact_email = "nuno.silva@gmail.com";
 $contact_phone = "912 345 678";
 $success_message = "";
 
