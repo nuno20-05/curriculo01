@@ -32,9 +32,9 @@ jobs:
         - name: Deploy via SSH
           uses: appleboy/ssh-action@v1.0.3
           with:
-            host: ${{ secrets.DEPLOY_HOST }}
-            username: ${{ secrets.DEPLOY_USER }}
-            password: ${{ secrets.DEPLOY_PASSWORD }}
+            host: ${{ secrets.SSHHOST }}
+            username: ${{ secrets.SSH_USER }}
+            password: ${{ secrets.KEY }}
             script: |
               cd ~/apps/curriculo01 || exit 1
               git pull
