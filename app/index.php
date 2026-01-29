@@ -1,5 +1,5 @@
 <?php
-$name = "Nuno Silva";
+$name = "Nuno-Silva";
 $contact_email = "nuno.silva@gmail.com";
 $contact_phone = "912 345 678";
 $linkedin = "https://linkedin.com/in/nuno-silva";
