@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Verificar Docker
+        run: docker --version
+
+      - name: Build com Docker Compose
+        run: docker compose build
+
+      - name: Validar configuração docker-compose
+        run: docker compose config

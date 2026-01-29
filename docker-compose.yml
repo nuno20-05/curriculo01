@@ -1,0 +1,32 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: cv_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - php
+    restart: unless-stopped
+    networks:
+      - cv_network
+
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: cv_php
+    volumes:
+      - ./app:/var/www/html
+    working_dir: /var/www/html
+    expose:
+      - "9000"
+    restart: unless-stopped
+    networks:
+      - cv_network
+
+networks:
+  cv_network:
+    driver: bridge
